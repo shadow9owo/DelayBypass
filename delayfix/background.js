@@ -1,4 +1,3 @@
-//attempt at fixing perms
 const chromeUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36";
 var isonytb = false;
 
@@ -23,7 +22,7 @@ function changeUserAgent() {
                 }
                 return { requestHeaders: details.requestHeaders };
             },
-            { urls: ["*://*.youtube.com/*", "*://*.youtu.be/*", "*://*.youtube-nocookie.com/*"] },
+            { urls: ["<all_urls>"] },
             ["blocking", "requestHeaders"]
         );
 
@@ -48,7 +47,7 @@ function changeUserAgent() {
 
 setInterval(() => {
     checkIfYouTubeTabIsOpen((result) => {
-        console.log("in interval");
+		console.log("in interval");
         if (result) {
             if (!isonytb) {
                 isonytb = true;
@@ -62,7 +61,7 @@ setInterval(() => {
                         }
                         return { requestHeaders: details.requestHeaders };
                     },
-                    { urls: ["*://*.youtube.com/*", "*://*.youtu.be/*", "*://*.youtube-nocookie.com/*"] },
+                    { urls: ["<all_urls>"] },
                     ["blocking", "requestHeaders"]
                 );
                 console.log("useragent changed to chrome");
