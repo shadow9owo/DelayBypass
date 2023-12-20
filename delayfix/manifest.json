@@ -2,7 +2,7 @@
   "author": "shadowdev",
   "manifest_version": 2,
   "name": "DelayBypass",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "description": "Fixes the YouTube delay bug",
   "icons": {
     "96": "icons/logo.png"
@@ -13,23 +13,32 @@
     "privacy",
     "webRequest",
     "webRequestBlocking",
-    "*://*.youtube.com/*",
-    "*://*.youtu.be/*",
-    "*://*.youtube-nocookie.com/*"
+    "<all_urls>"
   ],
   "background": {
-    "scripts": ["background.js"],
-	"persistent": false
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
   },
   "content_scripts": [
     {
-       "matches": ["*://*.youtube.com/*", "*://*.youtu.be/*", "*://*.youtube-nocookie.com/*"]
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.youtu.be/*",
+        "*://*.youtube-nocookie.com/*"
+      ]
     }
- ], 
+  ],
   "browser_action": {
     "default_icon": {
       "96": "icons/logo.png"
     },
     "default_title": "DelayBypass"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{0117460d-4e4a-49bc-a143-9f07bfeeb021}"
+    }
   }
 }
