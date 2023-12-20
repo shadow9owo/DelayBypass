@@ -35,10 +35,5 @@
       "96": "icons/logo.png"
     },
     "default_title": "DelayBypass"
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "{0117460d-4e4a-49bc-a143-9f07bfeeb021}"
-    }
   }
 }
